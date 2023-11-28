@@ -29,6 +29,7 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 
+//category select 
 var categorySelect = document.getElementById('categorySelect');
 var myInput = document.getElementById('myInput');
 var addBtn = document.querySelector('.addBtn');
@@ -50,13 +51,16 @@ categorySelect.addEventListener('change', function() {
     }
   });
 });
+
+
+//Adding the task according to the category
 function newElement() {
     var li = document.createElement("li");
     var inputValue = document.getElementById("myInput").value;
     var category = document.getElementById("categorySelect").value;
   
     if (inputValue === '' || category === 'all') {
-      alert("Please enter a task and select a category!");
+      alert("Please select category and enter the task!");
     } else {
       var t = document.createTextNode(`[${category}] ${inputValue}`);
       li.appendChild(t);
